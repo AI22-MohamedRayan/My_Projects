@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mentorship Programs - NextStepMentor</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #4a90e2;
+            --secondary-color: #50c878;
+            --accent-color: #ff6b6b;
+            --dark-color: #2c3e50;
+            --light-color: #ecf0f1;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: var(--dark-color);
+            background-color: #f4f7f6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        header {
+            background-color: var(--dark-color);
+            color: var(--light-color);
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-links li {
+            margin-left: 2rem;
+        }
+
+        .nav-links a {
+            color: var(--light-color);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background-color: var(--primary-color);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .hero {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/api/placeholder/1200/600');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            height: 70vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--light-color);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+            opacity: 0.7;
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .mentorship-info {
+            padding: 6rem 0;
+            background-color: #fff;
+        }
+
+        .mentorship-info h2, .mentors h2, .how-to-connect h2 {
+            text-align: center;
+            margin-bottom: 3rem;
+            font-size: 2.5rem;
+            color: var(--dark-color);
+            position: relative;
+        }
+
+        .mentorship-info h2::after, .mentors h2::after, .how-to-connect h2::after {
+            content: '';
+            display: block;
+            width: 50px;
+            height: 3px;
+            background-color: var(--primary-color);
+            margin: 1rem auto 0;
+        }
+
+        .mentorship-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .mentorship-card {
+            background-color: #f9f9f9;
+            border-radius: 15px;
+            padding: 2rem;
+            text-align: center;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .mentorship-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .mentorship-card img {
+            width: 80px;
+            height: 80px;
+            margin-bottom: 1rem;
+        }
+
+        .mentorship-card h3 {
+            color: var(--primary-color);
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+        }
+
+        .mentors {
+            padding: 6rem 0;
+            background-color: #f4f7f6;
+        }
+
+        .mentor-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .mentor-card {
+            background-color: #fff;
+            border-radius: 15px;
+            padding: 2rem;
+            text-align: center;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .mentor-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .mentor-card img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            margin-bottom: 1rem;
+            object-fit: cover;
+        }
+
+        .mentor-card h3 {
+            color: var(--primary-color);
+            font-size: 1.4rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .mentor-card p {
+            color: var(--secondary-color);
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .mentor-card .bio {
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+
+        .connect-btn {
+            display: inline-block;
+            background-color: var(--accent-color);
+            color: var(--light-color);
+            padding: 0.5rem 1rem;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .connect-btn:hover {
+            background-color: #ff8c8c;
+        }
+
+        .how-to-connect {
+            padding: 6rem 0;
+            background-color: #fff;
+        }
+
+        .steps {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .step {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 2rem;
+        }
+
+        .step-number {
+            background-color: var(--primary-color);
+            color: var(--light-color);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: 700;
+            margin-right: 1rem;
+            flex-shrink: 0;
+        }
+
+        .step-content h3 {
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        footer {
+            background-color: var(--dark-color);
+            color: var(--light-color);
+            text-align: center;
+            padding: 2rem 0;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .nav-links {
+                display: none;
+            }
+        }
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--light-color);
+            cursor: pointer;
+        }
+
+        @media (max-width: 768px) {
+            .menu-toggle {
+                display: block;
+            }
+
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background-color: var(--dark-color);
+                padding: 1rem 0;
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .nav-links li {
+                margin: 0.5rem 0;
+            }
+
+            .nav-links a {
+                padding: 0.5rem 1rem;
+                display: block;
+                width: 100%;
+                text-align: center;
+            }
+
+            .nav-links a::after {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <div class="logo">NextStepMentor</div>
+            <button class="menu-toggle" aria-label="Toggle navigation">
+                ☰
+            </button>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index-career.html">Career Guidance</a></li>
+                <li><a href="index-mentor.html">Mentorship</a></li>
+                <li><a href="index-asses.html">Assessment</a></li>
+                <li><a href="index-resour.html">Resources</a></li>
+                <li><a href="index-bit.html">MentorBot</a></li>
+                <li><a href="index-conta.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Mentorship Programs</h1>
+                <p>Connect with experienced professionals and accelerate your career growth.</p>
+            </div>
+        </section>
+
+        <section class="mentorship-info">
+            <div class="container">
+                <h2>Why Choose Our Mentorship Program?</h2>
+                <div class="mentorship-grid">
+                    <div class="mentorship-card">
+                        <img src="/api/placeholder/80/80" alt="Experience Icon">
+                        <h3>Industry Expertise</h3>
+                        <p>Learn from professionals with years of experience in various fields.</p>
+                    </div>
+                    <div class="mentorship-card">
+                        <img src="/api/placeholder/80/80" alt="Personalized Icon">
+                        <h3>Personalized Guidance</h3>
+                        <p>Receive tailored advice to help you achieve your career goals.</p>
+                    </div>
+                    <div class="mentorship-card">
+                        <img src="/api/placeholder/80/80" alt="Network Icon">
+                        <h3>Expand Your Network</h3>
+                        <p>Build valuable connections within your industry of interest.</p>
+                    </div>
+                    <div class="mentorship-card">
+                        <img src="/api/placeholder/80/80" alt="Growth Icon">
+                        <h3>Accelerate Your Growth</h3>
+                        <p>Fast-track your career development with expert insights.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="mentors">
+            <div class="container">
+                <h2>Meet Our Mentors</h2>
+                <div class="mentor-grid">
+                    <div class="mentor-card">
+                        <img src="/api/placeholder/120/120" alt="Sarah Johnson">
+                        <h3>Sarah Johnson</h3>
+                        <p>Software Engineer</p>
+                        <div class="bio">10+ years of experience in full-stack development. Passionate about guiding aspiring developers.</div>
+                        <a href="#" class="connect-btn">Connect</a>
+                    </div>
+                    <div class="mentor-card">
+                        <img src="/api/placeholder/120/120" alt="Michael Chen">
+                        <h3>Michael Chen</h3>
+                        <p>Data Scientist</p>
+                        <div class="bio">Expert in machine learning and AI. Helping students navigate the world of big data.</div>
+                        <a href="#" class="connect-btn">Connect</a>
+                    </div>
+                    <div class="mentor-card">
+                        <img src="/api/placeholder/120/120" alt="Emily Rodriguez">
+                        <h3>Emily Rodriguez</h3>
+                        <p>UX Designer</p>
+                        <div class="bio">Creative professional with a keen eye for user-centered design. Mentors aspiring designers.</div>
+                        <a href="#" class="connect-btn">Connect</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="how-to-connect">
+            <div class="container">
+                <h2>How to Connect with a Mentor</h2>
+                <div class="steps">
+                    <div class="step">
+                        <div class="step-number">1</div>
+                        <div class="step-content">
+                            <h3>Create Your Profile</h3>
+                            <p>Sign up and complete your profile with your background, interests, and career goals.</p>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">2</div>
+                        <div class="step-content">
+                            <h3>Browse Mentors</h3>
+                            <p>Explore our diverse pool of mentors and find those who align with your career aspirations.</p>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">3</div>
+                        <div class="step-content">
+                            <h3>Send a Connection Request</h3>
+                            <p>Reach out to your chosen mentor with a personalized message explaining why you'd like to connect.</p>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">4</div>
+                        <div class="step-content">
+                            <h3>Schedule Your First Session</h3>
+                            <p>Once your request is accepted, arrange your first mentoring session and start your journey!</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const menuToggle = document.querySelector('.menu-toggle');
+            const navLinks = document.querySelector('.nav-links');
+
+            menuToggle.addEventListener('click', function() {
+                navLinks.classList.toggle('active');
+            });
+        });
+    </script>
+    
+    <footer>
+        <p>&copy; 2024 NextStepMentor. All rights reserved.</p>
+    </footer>
+    
+</body>
+</html>

@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Career Guidance - NextStepMentor</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #4a90e2;
+            --secondary-color: #50c878;
+            --accent-color: #ff6b6b;
+            --dark-color: #2c3e50;
+            --light-color: #ecf0f1;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: var(--dark-color);
+            background-color: #f4f7f6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        header {
+            background-color: var(--dark-color);
+            color: var(--light-color);
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-links li {
+            margin-left: 2rem;
+        }
+
+        .nav-links a {
+            color: var(--light-color);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background-color: var(--primary-color);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .hero {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/api/placeholder/1200/600');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            height: 70vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--light-color);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+            opacity: 0.7;
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .career-paths {
+            padding: 6rem 0;
+            background-color: #fff;
+        }
+
+        .career-paths h2, .resources h2 {
+            text-align: center;
+            margin-bottom: 3rem;
+            font-size: 2.5rem;
+            color: var(--dark-color);
+            position: relative;
+        }
+
+        .career-paths h2::after, .resources h2::after {
+            content: '';
+            display: block;
+            width: 50px;
+            height: 3px;
+            background-color: var(--primary-color);
+            margin: 1rem auto 0;
+        }
+
+        .career-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .career-card {
+            background-color: #f9f9f9;
+            border-radius: 15px;
+            padding: 2rem;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .career-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .career-card h3 {
+            color: var(--primary-color);
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+        }
+
+        .career-card ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        .career-card ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        .career-card ul li strong {
+            color: var(--secondary-color);
+        }
+
+        .resources {
+            padding: 6rem 0;
+            background-color: #f4f7f6;
+        }
+
+        .resource-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .resource-card {
+            background-color: #fff;
+            border-radius: 15px;
+            padding: 2rem;
+            text-align: center;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .resource-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .resource-card img {
+            width: 80px;
+            height: 80px;
+            margin-bottom: 1rem;
+        }
+
+        .resource-card h3 {
+            color: var(--primary-color);
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+        }
+
+        .resource-card a {
+            display: inline-block;
+            background-color: var(--accent-color);
+            color: var(--light-color);
+            padding: 0.5rem 1rem;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            margin-top: 1rem;
+        }
+
+        .resource-card a:hover {
+            background-color: #ff8c8c;
+        }
+
+        footer {
+            background-color: var(--dark-color);
+            color: var(--light-color);
+            text-align: center;
+            padding: 2rem 0;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .nav-links {
+                display: none;
+            }
+        }
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--light-color);
+            cursor: pointer;
+        }
+
+        @media (max-width: 768px) {
+            .menu-toggle {
+                display: block;
+            }
+
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background-color: var(--dark-color);
+                padding: 1rem 0;
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .nav-links li {
+                margin: 0.5rem 0;
+            }
+
+            .nav-links a {
+                padding: 0.5rem 1rem;
+                display: block;
+                width: 100%;
+                text-align: center;
+            }
+
+            .nav-links a::after {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <div class="logo">NextStepMentor</div>
+            <button class="menu-toggle" aria-label="Toggle navigation">
+                ☰
+            </button>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index-career.html">Career Guidance</a></li>
+                <li><a href="index-mentor.html">Mentorship</a></li>
+                <li><a href="index-asses.html">Assessment</a></li>
+                <li><a href="index-resour.html">Resources</a></li>
+                <li><a href="index-bit.html">MentorBot</a></li>
+                <li><a href="index-conta.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Career Guidance for Students</h1>
+                <p>Explore diverse career paths, gain valuable insights, and access resources to shape your future.</p>
+            </div>
+        </section>
+
+        <section class="career-paths">
+            <div class="container">
+                <h2>Popular Career Paths</h2>
+                <div class="career-grid">
+                    <div class="career-card">
+                        <h3>Software Developer</h3>
+                        <ul>
+                            <li><strong>Description:</strong> Design, develop, and maintain software applications and systems.</li>
+                            <li><strong>Key Skills:</strong> Programming languages, problem-solving, teamwork</li>
+                            <li><strong>Education:</strong> Bachelor's in Computer Science or related field</li>
+                            <li><strong>Average Salary:</strong> $76,000 - $120,000</li>
+                        </ul>
+                    </div>
+                    <div class="career-card">
+                        <h3>Data Scientist</h3>
+                        <ul>
+                            <li><strong>Description:</strong> Analyze complex data to help organizations make better decisions.</li>
+                            <li><strong>Key Skills:</strong> Statistics, machine learning, data visualization</li>
+                            <li><strong>Education:</strong> Master's or Ph.D. in Data Science, Statistics, or related field</li>
+                            <li><strong>Average Salary:</strong> $85,000 - $150,000</li>
+                        </ul>
+                    </div>
+                    <div class="career-card">
+                        <h3>UX Designer</h3>
+                        <ul>
+                            <li><strong>Description:</strong> Create intuitive and enjoyable user experiences for digital products.</li>
+                            <li><strong>Key Skills:</strong> User research, wireframing, prototyping</li>
+                            <li><strong>Education:</strong> Bachelor's in Design, HCI, or related field</li>
+                            <li><strong>Average Salary:</strong> $65,000 - $110,000</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="resources">
+            <div class="container">
+                <h2>Career Development Resources</h2>
+                <div class="resource-grid">
+                    <div class="resource-card">
+                        <img src="/api/placeholder/80/80" alt="Assessment Icon">
+                        <h3>Career Assessment Tools</h3>
+                        <p>Discover your strengths and interests to find the perfect career match.</p>
+                        <a href="#">Take Assessment</a>
+                    </div>
+                    <div class="resource-card">
+                        <img src="/api/placeholder/80/80" alt="Mentor Icon">
+                        <h3>Mentorship Program</h3>
+                        <p>Connect with industry professionals for personalized guidance.</p>
+                        <a href="#">Find a Mentor</a>
+                    </div>
+                    <div class="resource-card">
+                        <img src="/api/placeholder/80/80" alt="Workshop Icon">
+                        <h3>Skill-Building Workshops</h3>
+                        <p>Enhance your skills with our interactive online workshops.</p>
+                        <a href="#">Browse Workshops</a>
+                    </div>
+                    <div class="resource-card">
+                        <img src="/api/placeholder/80/80" alt="Library Icon">
+                        <h3>Career Library</h3>
+                        <p>Access a wealth of articles, videos, and guides on various careers.</p>
+                        <a href="#">Explore Library</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const menuToggle = document.querySelector('.menu-toggle');
+            const navLinks = document.querySelector('.nav-links');
+
+            menuToggle.addEventListener('click', function() {
+                navLinks.classList.toggle('active');
+            });
+        });
+    </script>
+
+    <footer>
+        <p>&copy; 2024 NextStepMentor. All rights reserved.</p>
+    </footer>
+</body>
+</html>
