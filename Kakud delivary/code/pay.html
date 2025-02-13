@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Payment Page</title>
+  <link rel="stylesheet" href="pay.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Enter Payment Details</h1>
+    <form id="payment-form" action="process_payment.php" method="post">
+      <div class="form-group">
+        <label for="user-email">Email:</label>
+        <input type="email" id="user-email" name="user-email" placeholder="Enter Your Email" required>
+      </div>
+      <div class="form-group">
+        <label for="payment-method">Payment Method:</label><br>
+        <input type="radio" id="credit-card" name="payment-method" value="credit-card" checked>
+        <label for="credit-card">Credit Card</label><br>
+        <input type="radio" id="paypal" name="payment-method" value="paypal">
+        <label for="paypal">PayPal</label><br>
+        <input type="radio" id="bank-transfer" name="payment-method" value="bank-transfer">
+        <label for="bank-transfer">Bank Transfer</label>
+      </div>
+      
+      <div id="credit-card-fields" class="payment-fields">
+        <div class="form-group">
+          <label for="card-number">Card Number:</label>
+          <input type="text" id="card-number" name="card-number" placeholder="Enter Card Number" required>
+        </div>
+        <div class="form-group">
+          <label for="card-expiry">Expiry Date:</label>
+          <input type="text" id="card-expiry" name="card-expiry" placeholder="MM/YY" required>
+        </div>
+        <div class="form-group">
+          <label for="card-cvv">CVV:</label>
+          <input type="text" id="card-cvv" name="card-cvv" placeholder="Enter CVV" required>
+        </div>
+      </div>
+      
+      <div id="paypal-fields" class="payment-fields" style="display: none;">
+        <div class="form-group">
+          <label for="paypal-email">PayPal Email:</label>
+          <input type="email" id="paypal-email" name="paypal-email" placeholder="Enter PayPal Email" required>
+        </div>
+      </div>
+      
+      <div id="bank-transfer-fields" class="payment-fields" style="display: none;">
+        <div class="form-group">
+          <label for="bank-account">Bank Account Number:</label>
+          <input type="text" id="bank-account" name="bank-account" placeholder="Enter Bank Account Number" required>
+        </div>
+      </div>
+      
+      <button type="submit">Submit Payment</button>
+    </form>
+    <div id="payment-status"></div>
+
+    <h2>Payment History</h2>
+    <button id="load-payments">Load Payment History</button>
+    <div id="payment-history"></div>
+  </div>
+
+  <script src="pay.js"></script>
+</body>
+</html>

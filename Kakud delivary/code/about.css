@@ -1,0 +1,66 @@
+body {
+    font-family: Arial, sans-serif;
+    background:url('dan-meyers-IQVFVH0ajag-unsplash.jpg');
+    margin: 0;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-size: cover;
+    text-align: center;
+}
+
+.container {
+    background-color: #fff;
+    opacity: 70%;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    max-width: 800px;
+    box-sizing: border-box;
+
+}
+
+header {
+    margin-bottom: 20px;
+}
+
+h1 {
+    margin: 0;
+    font-size: 2.5em;
+}
+
+.content p {
+    font-size: 1.2em;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    text-align: left;
+    color: black;
+    font-weight: bold;
+}
+
+@media (max-width: 600px) {
+    .container {
+        width: 95%;
+        padding: 15px;
+    }
+
+    h1 {
+        font-size: 2em;
+    }
+
+    .content p {
+        font-size: 1em;
+    }
+}
+
+.i2 img{
+    position: absolute;
+    top:10px;
+    left:10px;
+    border-radius: 40px;
+}

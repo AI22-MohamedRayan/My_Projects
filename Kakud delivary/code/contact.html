@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <link rel="stylesheet" href="contact.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="i2">
+        <img src="WhatsApp Image 2024-07-20 at 17.40.51 (1).jpeg" width="80" height="80">
+        <a href="front.html"><h2>Home</h2></a>
+    </div>
+    </header>
+    <div class="container">
+        <div class="contact-info">
+            <h2>Contact Us</h2>
+            <p><i class="fas fa-user"></i> KAKUD</p>
+            <p><i class="fas fa-phone"></i> (+91) 636-209-2895</p>
+            <p><i class="fas fa-envelope"></i> kakud@gmail.com</p>
+            <p><i class="fas fa-map-marker-alt"></i> Kottur Road, Vijayanagar, Harapanahalli, Karnataka 583-131</p>
+        </div>
+        <form id="contactForm">
+            <label for="name"><i class="fas fa-user"></i> Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email"><i class="fas fa-envelope"></i> Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="phone"><i class="fas fa-phone"></i> Mobile Number:</label>
+            <input type="tel" id="phone" name="phone" pattern="[0-9]{10}" required>
+
+            <label for="query"><i class="fas fa-comment"></i> Your Query:</label>
+            <textarea id="query" name="query" required></textarea>
+
+            <button type="submit" class="btn"><i class="fas fa-paper-plane"></i> Submit</button>
+        </form>
+    </div>
+    <script src="contact.js"></script>
+</body>
+</html>

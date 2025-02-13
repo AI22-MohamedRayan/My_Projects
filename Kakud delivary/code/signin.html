@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/caa0960908.js" crossorigin="anonymous"></script>
+    <title>Register</title>
+    <link rel="stylesheet" href="sign.css">
+</head>
+
+
+<body>
+    <div class="container">
+        <form id="signupForm" action="signup.php" method="post">
+            <h1>Sign Up</h1>
+            <label for="firstName">First Name</label>
+            <input type="text" id="firstName" name="firstName" required>
+
+            <label for="lastName">Last Name</label>
+            <input type="text" id="lastName" name="lastName" required>
+
+            <label for="email">Email</label>
+            <input type="email" id="address" name="email" required>
+
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" required>
+
+            <label for="confirmPassword">Confirm Password</label>
+            <input type="password" id="confirmPassword" name="confirmPassword" required>
+            <button type="submit">Submit</button>
+            <button type="button" id="cancelButton">Cancel</button>
+        </form>
+        </div>
+</body>
+
+</html>

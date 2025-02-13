@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Email and OTP Verification</title>
+<link rel="stylesheet" href="forget.css">
+</head>
+<body>
+<div class="container">
+  <h2>Email and OTP Verification</h2>
+  <form id="emailOTPForm">
+    <div class="form-group">
+      <label for="email">Email Address:</label>
+      <input type="email" id="email" name="email" required>
+    </div>
+    <div class="form-group" id="otpContainer" style="display: none;">
+      <label for="otp">Enter OTP:</label>
+      <input type="text" id="otp" name="otp" required>
+    </div>
+    <button type="button" onclick="sendOTP()">Send OTP</button>
+    <button type="submit" id="submitBtn" style="display: none;">Verify OTP</button>
+  </form>
+</div>
+
+<script src="forget.js"></script>
+</body>
+</html>

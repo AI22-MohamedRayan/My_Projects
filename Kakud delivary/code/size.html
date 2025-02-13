@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find Your Delivery Vehicle</title>
+    <link rel="stylesheet" href="size.css">
+
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <img src="WhatsApp Image 2024-07-20 at 17.40.51 (1).jpeg" style="border-radius: 50%;" alt="Logo" width="80" height="80">
+    </div>
+    <nav class="navbar">
+      <a href="home.html">Home</a>
+    </nav>
+  </header>
+  <div class="container">
+    <h1>Find Your Delivery Vehicle</h1>
+    <p>Enter your product details to see compatible vehicles.</p>
+    <form id="vehicle-check" action="size.php" method="post">
+      <div class="form-group">
+        <label for="product-name">Product Name:</label>
+        <input type="text" id="product-name" name="product-name" placeholder="Enter Product Name" required>
+      </div>
+      <div class="form-group">
+        <label for="product-size">Product Size (Tons):</label>
+        <input type="number" step="0.01" id="product-size" name="product-size" placeholder="Enter Product Size" required>
+      </div>
+      <button type="submit">Find Compatible Vehicles</button>
+    </form>
+    <div id="vehicle-results"></div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

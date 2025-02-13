@@ -1,0 +1,124 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background:url(jake-blucker-SzNpyQMb8W4-unsplash.jpg);
+    background-repeat: no-repeat;
+    background-position:center;
+    height: 100vh;
+    width: 100%;
+
+  }
+  
+  .container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 70px;
+    background-color:whitesmoke;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(111, 151, 192, 0.1);
+    position: absolute;
+    top:180px;
+    left:400px;
+  
+    opacity: 90%;
+  }
+  
+  h1 {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 15px;
+  }
+  
+  p {
+    text-align: center;
+    color: #777;
+  }
+  
+  .form-group {
+    margin-bottom: 15px;
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+  }
+  
+  input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    font-size: 24px;
+  }
+  
+  button[type="submit"] {
+    background-color: #ffffff;
+    color: #c77070;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+  }
+  
+  button[type="submit"]:hover {
+    background-color: #402a2a;
+  }
+  
+  #availability-results {
+    margin-top: 20px;
+    text-align: center;
+    font-weight: bold;
+  }
+  .container h1{
+    font-size: 40px;
+  }
+  .container p{
+    font-size: 30px;
+  }
+.form-group label{
+    font-size: 23px;
+}
+.form-group select{
+    font-size: 22px;
+}
+.container button{
+    font-size: 18px;
+    position: absolute;
+    top: 440px;
+    font-weight: bold;
+}
+header {
+    background:transparent;
+    background-repeat: no-repeat;
+    background-position: center;
+        color: #fff;
+        padding: 10px 0;
+        position: fixed;
+        width: 100%;
+        z-index: 1000;
+    }
+    .navbar {
+        display: flex;
+        padding: 5px;
+        justify-content: space-between;
+        
+    }
+.container1{
+    font-weight: bold;
+    font-size: 25px;;
+    position: absolute;
+    top:15px;
+    left:150px;
+}
+.nav-links a{
+    font-size: 30px;
+    font-weight: bold;
+    text-decoration: none;
+    color: aliceblue;
+}
+.i2 img{
+    border-radius: 50px;
+}

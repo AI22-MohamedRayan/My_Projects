@@ -1,0 +1,93 @@
+body {
+  font-family: 'Arial', sans-serif;
+  display: flex;
+  min-height: 100vh;
+  align-items: center;
+  justify-content: center;
+  background: url("jed-owen-ajZibDGpPew-unsplash.jpg") center no-repeat;
+  background-size: cover;
+  margin: 0;
+}
+
+.login-container {
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 40px 60px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  text-align: center;
+}
+
+h1 {
+  margin-bottom: 20px;
+  font-size: 24px;
+  color: #333;
+}
+
+label {
+  display: block;
+  text-align: left;
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: #555;
+}
+
+input[type="text"],
+input[type="password"] {
+  width: 100%;
+  padding: 12px 15px;
+  margin: 10px 0 20px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+  font-size: 16px;
+}
+
+button {
+  width: 100%;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+  margin-top: 10px;
+  background-color: #4CAF50;
+  color: white;
+  font-size: 16px;
+}
+
+button:hover {
+  background-color: #45a049;
+  transform: scale(1.05);
+}
+
+.fo, .hi {
+  margin-top: 20px;
+}
+
+.fo a, .hi a {
+  color: #007BFF;
+  text-decoration: none;
+}
+
+.fo a:hover, .hi a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 600px) {
+  .login-container {
+      padding: 30px 20px;
+  }
+
+  h1 {
+      font-size: 20px;
+  }
+
+  input[type="text"],
+  input[type="password"] {
+      font-size: 14px;
+  }
+
+  button {
+      font-size: 14px;
+  }
+}

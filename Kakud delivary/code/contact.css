@@ -1,0 +1,123 @@
+body {
+    font-family: Arial, sans-serif;
+    background:url("jake-blucker-SzNpyQMb8W4-unsplash.jpg");
+    margin: 0;
+    padding: 0 15px;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    box-sizing: border-box;
+}
+
+.container {
+    background-color: #fff;
+    opacity: 70%;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 600px;
+    box-sizing: border-box;
+    animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.contact-info {
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+.contact-info p {
+    font-size: 1.1em;
+    margin: 10px 0;
+}
+
+.contact-info i {
+    margin-right: 10px;
+    color: #28a745;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    font-size: 1.1em;
+}
+
+input, textarea {
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+textarea {
+    resize: vertical;
+}
+
+.btn {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    background-color: #28a745;
+    color: white;
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn i {
+    margin-right: 5px;
+}
+
+.btn:hover {
+    opacity: 0.8;
+}
+
+@media (max-width: 600px) {
+    .container {
+        width: 95%;
+        padding: 15px;
+    }
+
+    label, .contact-info p {
+        font-size: 1em;
+    }
+
+    .btn {
+        font-size: 14px;
+    }
+}
+
+.i2 img{
+    position: absolute;
+    top:10px;
+    left:10px;
+    border-radius: 40px;
+}
+.i2 a{
+    position: absolute;
+    top:10px;
+    left:140px;
+    text-decoration: none;
+    color: aliceblue;
+    font-size: 23px;
+}
